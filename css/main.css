@@ -83,6 +83,142 @@
   /* ==========================================================================
      Author's custom styles
      ========================================================================== */
+     /* Basic styles */
+
+     html {
+      font-size: 12px;
+     }
+
+     body {
+      font-family: 'Kumbh Sans', sans-serif;
+      text-align: left;
+      background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+      min-height: 100vh;
+      color: hsl(237, 12%, 33%);
+     }
+
+     main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      background-image: url(../images/illustration-woman-online-mobile.svg) no-repeat;
+      margin-top: 108px;
+     }
+
+     main::before {
+      content: "";
+      background: url(../images/illustration-woman-online-mobile.svg) no-repeat;
+      width: 236px;
+      height: 180px;
+      position: absolute;
+      top: -3%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+     }
+
+     main::after {
+      content: "";
+      background: url(../images/bg-pattern-mobile.svg) no-repeat;
+      width: 236px;
+      height: 180px;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+     }
+
+     h1 {
+      font-size: 3em;
+      margin: 0;
+      color: #201d38;
+     }
+
+     h2 {
+      font-size: 1em;
+      margin: 0;
+     }
+
+     p {
+      font-size: 1em;
+      color: hsl(240, 6%, 50%);
+      margin: 0;
+     }
+
+     a {
+      text-decoration: none;
+     }
+
+     button {
+      border: transparent;
+      background-color: transparent;
+      padding: 0;
+     }
+
+     /* Classes, Ids, Etc. */
+
+     .content-wrapper {
+      width: 335px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: white;
+      border-radius: 20px;
+     }
+
+     .faq-content {
+      padding: 140px 25px 25px 25px;
+      width: 285px;
+      text-align: center;
+     }
+
+     .wrapper {
+      width: 80%;
+      border-bottom: 1px solid hsl(240, 5%, 91%);
+     }
+
+     .question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+     }
+
+     .question:hover {
+      color: hsl(14, 88%, 65%);
+     }
+
+     .answer {
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+
+     }
+
+     .question.open + .answer {
+      opacity: 1;
+      overflow: visible;
+      height: 100%;
+      padding-bottom: 1em;
+     }
+
+     .question.open {
+      color: black;
+     }
+
+     @keyframes up-n-down {
+      from {
+        transform: translate(-55%, -55%);
+      }
+      50% {
+        transform: translate(-55%, -57.5%);
+      }
+      to {
+        transform: translate(-55%, -55%);
+      }
+     }
   
   /* ==========================================================================
      Helper classes
@@ -166,9 +302,65 @@
      These examples override the primary ('mobile first') styles.
      Modify as content requires.
      ========================================================================== */
-  
-  @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+
+  @media only screen and (min-width: 1200px) {
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 510px;
+      width: 920px;
+      background: 
+      url(../images/illustration-woman-online-desktop.svg) bottom 6em left -6.3em no-repeat,
+      url(../images/bg-pattern-desktop.svg) bottom -13em left -46em no-repeat;
+      background-color: white;
+      border-radius: 20px;
+      margin: 0;
+    }
+
+    main::before {
+      content: "";
+      background: url(../images/illustration-box-desktop.svg) no-repeat;
+      width: 140px;
+      height: 190px;
+      position: relative;
+      top: 32%;
+      left: -35.5%;
+      transform: translate(-55%, -55%);
+      animation: up-n-down 2s ease-in-out;
+      animation-iteration-count: infinite;
+    }
+
+    main::after {
+      display: none;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .content-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: transparent;
+      padding: 40px 70px;
+    }
+
+    .faq-content {
+      padding: 0;
+      text-align: left;
+    }
   }
   
   @media print,
